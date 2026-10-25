@@ -9,6 +9,36 @@ import shutil
 import platform
 import subprocess
 
+def ensure_dependencies():
+    """Tự động kiểm tra và cài đặt thư viện thiếu nếu máy người dùng chưa có."""
+    required = {
+        "yt_dlp": "yt-dlp",
+        "colorama": "colorama",
+        "imageio_ffmpeg": "imageio-ffmpeg"
+    }
+    missing = []
+    for mod, pkg in required.items():
+        try:
+            __import__(mod)
+        except ImportError:
+            missing.append(pkg)
+
+    if missing:
+        print(f"[*] Đang tự động cài đặt thư viện cần thiết: {', '.join(missing)}...")
+        cmd = [sys.executable, "-m", "pip", "install", "-q"] + missing
+        try:
+            subprocess.check_call(cmd)
+            print("[OK] Cài đặt thư viện hoàn tất!\n")
+        except subprocess.CalledProcessError:
+            try:
+                subprocess.check_call(cmd + ["--break-system-packages"])
+                print("[OK] Cài đặt thư viện hoàn tất!\n")
+            except Exception:
+                pass
+
+# Tự động đảm bảo môi trường đầy đủ trước khi chạy
+ensure_dependencies()
+
 try:
     from colorama import init, Fore, Style
     init(autoreset=True)
@@ -73,14 +103,7 @@ def print_banner():
     print(COLOR_TITLE + "=" * 65 + "\n")
 
 def main():
-    try:
-        import yt_dlp
-    except ImportError:
-        print(COLOR_ERR + "[LỖI] Chưa cài đặt thư viện 'yt-dlp'!")
-        print(COLOR_WARN + "Vui lòng chạy lệnh sau trên Terminal / Command Prompt:")
-        print("    pip install -r requirements.txt")
-        input("\nNhấn Enter để thoát...")
-        sys.exit(1)
+    import yt_dlp
 
     ffmpeg_path = get_ffmpeg_path()
     

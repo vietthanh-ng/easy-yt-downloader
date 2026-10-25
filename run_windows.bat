@@ -7,15 +7,18 @@ cd /d "%~dp0"
 
 where python >nul 2>nul
 if %errorlevel% neq 0 (
-    echo [LỖI] Không tìm thấy Python trên máy tính của bạn!
-    echo Vui lòng tải và cài đặt Python từ: https://www.python.org/downloads/
-    echo (Lưu ý tick chọn "Add python.exe to PATH" khi cài đặt)
+    echo =====================================================================
+    echo [LỖI] Máy tính của bạn chưa cài đặt Python!
+    echo =====================================================================
+    echo Đang tự động mở trang web chính thức để bạn tải Python...
+    start https://www.python.org/downloads/
+    echo.
+    echo * LƯU Ý QUAN TRỌNG: Khi cài đặt, hãy nhớ tick chọn ô:
+    echo   "[X] Add python.exe to PATH" ở góc dưới cùng!
+    echo =====================================================================
     pause
     exit /b
 )
-
-echo [*] Đang kiểm tra thư viện cần thiết...
-python -m pip install -q -r requirements.txt
 
 python downloader.py
 
