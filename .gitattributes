@@ -1,0 +1,7 @@
+# Đảm bảo file shell script luôn dùng line-ending LF của Unix/macOS
+*.sh text eol=lf
+*.command text eol=lf
+*.py text eol=lf
+
+# File batch Windows dùng CRLF
+*.bat text eol=crlf
