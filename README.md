@@ -1,6 +1,6 @@
 # 🚀 Easy YouTube Downloader (Đa Nền Tảng)
 
-Công cụ tải video YouTube, Shorts, Playlist và tách nhạc MP3 tốc độ cao, hỗ trợ chạy mượt mà trên cả **Windows** và **macOS** (kèm Linux).
+Công cụ tải video YouTube, Shorts, Playlist và tách nhạc MP3 tốc độ cao, hỗ trợ chạy mượt trên **Windows** và **macOS** .
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)]()
