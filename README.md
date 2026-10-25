@@ -1,4 +1,4 @@
-# 🚀 Easy YouTube Downloader (Đa Nền Tảng)
+#  Easy YouTube Downloader (Đa Nền Tảng)
 
 Công cụ tải video YouTube, Shorts, Playlist và tách nhạc MP3 tốc độ cao, hỗ trợ chạy mượt trên **Windows** và **macOS** .
 
@@ -9,16 +9,16 @@ Công cụ tải video YouTube, Shorts, Playlist và tách nhạc MP3 tốc đ�
 
 ---
 
-## 🌟 Tính Năng Nổi Bật
+##  Tính Năng Nổi Bật
 
-- 🎬 **Tải Video Đa Độ Phân Giải:** Hỗ trợ chuẩn **1080p Full HD**, **720p HD**, hoặc chất lượng gốc cao nhất (**2K / 4K / 8K**).
-- 🎵 **Tách Nhạc MP3:** Tự động tách âm thanh chất lượng cao 320kbps từ video âm nhạc hoặc podcast.
-- 📑 **Hỗ Trợ Danh Sách Phát (Playlist):**
+-  **Tải Video Đa Độ Phân Giải:** Hỗ trợ chuẩn **1080p Full HD**, **720p HD**, hoặc chất lượng gốc cao nhất (**2K / 4K / 8K**).
+-  **Tách Nhạc MP3:** Tự động tách âm thanh chất lượng cao 320kbps từ video âm nhạc hoặc podcast.
+-  **Hỗ Trợ Danh Sách Phát (Playlist):**
   - Tải toàn bộ danh sách phát chỉ bằng 1 liên kết.
   - Tùy chọn tải theo khoảng tập (ví dụ: chỉ tải từ tập `1-50` hoặc `10-20`).
-- ⚡ **Tốc Độ Vượt Trội:** Kết nối trực tiếp tới máy chủ CDN của Google/YouTube, tải tối đa băng thông đường truyền mạng.
-- 🔀 **Tự Động Ghép File (Remux):** Tự động hợp nhất luồng hình ảnh và âm thanh thành file `.mp4` chuẩn chỉnh không lỗi lệch tiếng.
-- 📂 **Tự Động Mở Thư Mục:** Sau khi tải xong, tự động mở thư mục chứa video trên Windows Explorer hoặc macOS Finder.
+-  **Tốc Độ Vượt Trội:** Kết nối trực tiếp tới máy chủ CDN của Google/YouTube, tải tối đa băng thông đường truyền mạng.
+-  **Tự Động Ghép File (Remux):** Tự động hợp nhất luồng hình ảnh và âm thanh thành file `.mp4` chuẩn chỉnh không lỗi lệch tiếng.
+-  **Tự Động Mở Thư Mục:** Sau khi tải xong, tự động mở thư mục chứa video trên Windows Explorer hoặc macOS Finder.
 
 ---
 
@@ -37,7 +37,7 @@ easy-yt-downloader/
 
 ---
 
-## 🛠 Hướng Dẫn Cài Đặt & Sử Dụng
+##  Hướng Dẫn Cài Đặt & Sử Dụng
 
 ### 1. Dành cho người dùng Windows
 
@@ -85,7 +85,7 @@ python3 downloader.py
 
 ---
 
-## 📖 Hướng Dẫn Thao Tác Chi Tiết
+## 📖 Hướng Dẫn Thao Tác
 
 Khi màn hình công cụ hiện lên:
 1. **Dán link:** Copy link video hoặc playlist từ trình duyệt $\rightarrow$ Chuột phải (hoặc `Ctrl + V` / `Cmd + V`) vào cửa sổ tool $\rightarrow$ Nhấn **Enter**.
@@ -101,7 +101,7 @@ Khi màn hình công cụ hiện lên:
 
 ---
 
-## ❓ Câu Hỏi Thường Gặp (FAQ)
+##  Câu Hỏi Thường Gặp (FAQ)
 
 <details>
 <summary><b>1. Video 1080p có bị mất tiếng không?</b></summary>
@@ -121,7 +121,7 @@ Công cụ đã bật sẵn tính năng chống ghi đè (`nooverwrites=True`). 
 
 ---
 
-## 🤝 Đóng Góp (Contributing)
+##  Đóng Góp (Contributing)
 
 Mọi đóng góp nhằm cải thiện công cụ đều rất được hoan nghênh! Hãy mở một **Issue** hoặc tạo một **Pull Request** trên GitHub.
 
