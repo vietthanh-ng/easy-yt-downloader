@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 """
 Easy YouTube Downloader (Cross-platform for Windows, macOS, Linux)
 Hỗ trợ tải Video Full HD, 4K, Playlist và tách nhạc MP3 tốc độ cao.
@@ -12,7 +9,6 @@ import shutil
 import platform
 import subprocess
 
-# Tự động hỗ trợ màu sắc trên terminal
 try:
     from colorama import init, Fore, Style
     init(autoreset=True)
@@ -30,12 +26,10 @@ except ImportError:
 
 def get_ffmpeg_path():
     """Tìm đường dẫn ffmpeg trên hệ thống hoặc qua thư viện imageio-ffmpeg."""
-    # 1. Kiểm tra ffmpeg có sẵn trong PATH hệ điều hành
     system_ffmpeg = shutil.which("ffmpeg")
     if system_ffmpeg:
         return system_ffmpeg
 
-    # 2. Kiểm tra ffmpeg đi kèm của imageio-ffmpeg
     try:
         import imageio_ffmpeg
         bundled_ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
@@ -44,7 +38,6 @@ def get_ffmpeg_path():
     except ImportError:
         pass
 
-    # 3. Kiểm tra file ffmpeg cùng thư mục script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     local_ffmpeg_win = os.path.join(script_dir, "ffmpeg.exe")
     local_ffmpeg_unix = os.path.join(script_dir, "ffmpeg")
@@ -106,15 +99,11 @@ def main():
         else:
             print(COLOR_SUCCESS + f"[OK] Đã kết nối bộ xử lý FFmpeg: {os.path.basename(ffmpeg_path)}\n")
 
-        # 1. Nhập đường link
         url = input(">>> Dán link YouTube (Video / Playlist / Shorts): ").strip()
         if not url:
             continue
-
-        # Loại bỏ ngoặc kép nếu có
         url = url.strip('"\'')
 
-        # 2. Chọn chất lượng
         print("\n" + "-" * 50)
         print("Chọn định dạng tải về:")
         print("  [1] 1080p Full HD (Chuẩn MP4 - Khuyên dùng)")
@@ -124,7 +113,6 @@ def main():
         print("-" * 50)
         choice = input("Nhập lựa chọn (1/2/3/4) [Mặc định: 1]: ").strip() or "1"
 
-        # 3. Xử lý playlist
         playlist_items = None
         if "list=" in url:
             print("\n" + COLOR_TITLE + "[Phát hiện Playlist Danh Sách Phát]")
@@ -134,7 +122,6 @@ def main():
             if pl_choice == "2":
                 playlist_items = input("Nhập khoảng tập (ví dụ 1-50): ").strip()
 
-        # 4. Cấu hình thư mục lưu trữ
         script_dir = os.path.dirname(os.path.abspath(__file__))
         output_dir = os.path.join(script_dir, "downloads")
         os.makedirs(output_dir, exist_ok=True)

@@ -52,10 +52,8 @@ easy-yt-downloader/
 
 #### Cách 2: Chạy bằng Terminal
 ```powershell
-# Cài đặt thư viện
 pip install -r requirements.txt
 
-# Khởi chạy tool
 python downloader.py
 ```
 
@@ -73,10 +71,8 @@ python downloader.py
 
 #### Cách 2: Chạy trực tiếp với Python 3
 ```bash
-# Cài đặt thư viện
 pip3 install -r requirements.txt
 
-# Chạy công cụ
 python3 downloader.py
 ```
 

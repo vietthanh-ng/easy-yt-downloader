@@ -5,7 +5,6 @@ color 0b
 
 cd /d "%~dp0"
 
-:: Kiểm tra Python
 where python >nul 2>nul
 if %errorlevel% neq 0 (
     echo [LỖI] Không tìm thấy Python trên máy tính của bạn!
@@ -15,11 +14,9 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-:: Cài đặt thư viện nếu chưa có
 echo [*] Đang kiểm tra thư viện cần thiết...
 python -m pip install -q -r requirements.txt
 
-:: Chạy công cụ
 python downloader.py
 
 pause
