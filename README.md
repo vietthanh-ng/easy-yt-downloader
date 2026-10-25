@@ -1,6 +1,6 @@
-#  Easy YouTube Downloader (Đa Nền Tảng)
+# Easy YouTube Downloader (Đa Nền Tảng)
 
-Công cụ tải video YouTube, Shorts, Playlist và tách nhạc MP3 tốc độ cao, hỗ trợ chạy mượt trên **Windows** và **macOS** .
+Công cụ tải video YouTube, Shorts, Playlist và tách nhạc MP3 tốc độ cao, hỗ trợ chạy mượt trên **Windows** và **macOS**.
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)]()
@@ -9,27 +9,39 @@ Công cụ tải video YouTube, Shorts, Playlist và tách nhạc MP3 tốc đ�
 
 ---
 
-##  Tính Năng Nổi Bật
+## Tính Năng Nổi Bật
 
--  **Tải Video Đa Độ Phân Giải:** Hỗ trợ chuẩn **1080p Full HD**, **720p HD**, hoặc chất lượng gốc cao nhất (**2K / 4K / 8K**).
--  **Tách Nhạc MP3:** Tự động tách âm thanh chất lượng cao 320kbps từ video âm nhạc hoặc podcast.
--  **Hỗ Trợ Danh Sách Phát (Playlist):**
+- **Tải Video Đa Độ Phân Giải:** Hỗ trợ chuẩn **1080p Full HD**, **720p HD**, hoặc chất lượng gốc cao nhất (**2K / 4K / 8K**).
+- **Tách Nhạc MP3:** Tự động tách âm thanh chất lượng cao 320kbps từ video âm nhạc hoặc podcast.
+- **Hỗ Trợ Danh Sách Phát (Playlist):**
   - Tải toàn bộ danh sách phát chỉ bằng 1 liên kết.
   - Tùy chọn tải theo khoảng tập (ví dụ: chỉ tải từ tập `1-50` hoặc `10-20`).
--  **Tốc Độ Vượt Trội:** Kết nối trực tiếp tới máy chủ CDN của Google/YouTube, tải tối đa băng thông đường truyền mạng.
--  **Tự Động Ghép File (Remux):** Tự động hợp nhất luồng hình ảnh và âm thanh thành file `.mp4` chuẩn chỉnh không lỗi lệch tiếng.
--  **Tự Động Mở Thư Mục:** Sau khi tải xong, tự động mở thư mục chứa video trên Windows Explorer hoặc macOS Finder.
+- **Tốc Độ Vượt Trội:** Kết nối trực tiếp tới máy chủ CDN của Google/YouTube, tải tối đa băng thông đường truyền mạng.
+- **Tự Động Ghép File (Remux):** Tự động hợp nhất luồng hình ảnh và âm thanh thành file `.mp4` chuẩn chỉnh không lỗi lệch tiếng.
+- **Tự Động Mở Thư Mục:** Sau khi tải xong, tự động mở thư mục chứa video trên Windows Explorer hoặc macOS Finder.
 
 ---
 
-## 📂 Cấu Trúc Dự Án
+## Khởi Động Nhanh (1-Click - Không Cần Dòng Lệnh)
+
+Dành cho người dùng muốn sử dụng ngay mà không cần thao tác với dòng lệnh:
+
+- **Trên Windows:** Nhấp đúp chuột vào file **`run_windows.bat`**.
+- **Trên macOS:** Nhấp đúp chuột vào file **`run_mac.command`** trong Finder.
+
+> **Lưu ý:** Hệ thống đã tích hợp sẵn cơ chế tự động cài đặt thư viện thiếu. Khi mở lần đầu, tool sẽ tự chuẩn bị mọi thứ trong vài giây mà bạn không cần phải tự gõ bất kỳ câu lệnh nào.
+
+---
+
+## Cấu Trúc Dự Án
 
 ```text
 easy-yt-downloader/
 ├── downloader.py         # Mã nguồn chính chạy trên mọi hệ điều hành
-├── run_windows.bat       # File chạy nhanh 1-click cho người dùng Windows
-├── run_mac.sh            # File chạy nhanh 1-click cho người dùng macOS
-├── requirements.txt      # Danh sách thư viện cần thiết (yt-dlp, imageio-ffmpeg, colorama)
+├── run_windows.bat       # Khởi động nhanh 1-click cho người dùng Windows
+├── run_mac.command       # Khởi động nhanh 1-click cho người dùng macOS (Finder)
+├── run_mac.sh            # Script khởi chạy qua Terminal trên macOS/Linux
+├── requirements.txt      # Danh sách thư viện phụ thuộc
 ├── .gitignore            # Bỏ qua các file rác và video đã tải khi push lên Git
 ├── README.md             # Tài liệu hướng dẫn sử dụng
 └── LICENSE               # Giấy phép mã nguồn mở MIT
@@ -37,60 +49,42 @@ easy-yt-downloader/
 
 ---
 
-##  Hướng Dẫn Cài Đặt & Sử Dụng
+## Hướng Dẫn Cài Đặt Bằng Dòng Lệnh (Dành Cho Lập Trình Viên)
 
-### 1. Dành cho người dùng Windows
+Nếu bạn muốn chạy thông qua Terminal / Command Prompt:
 
-#### Cách 1: Chạy nhanh (Khuyên dùng)
-1. Tải hoặc `git clone` mã nguồn về máy:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/easy-yt-downloader.git
-   cd easy-yt-downloader
-   ```
-2. Nhấp đúp chuột vào file **`run_windows.bat`**.
-3. File `.bat` sẽ tự động kiểm tra, cài đặt thư viện cần thiết và khởi chạy công cụ.
-
-#### Cách 2: Chạy bằng Terminal
+### 1. Dành cho Windows
 ```powershell
+# Di chuyển vào thư mục dự án
+cd easy-yt-downloader
+
+# Cài đặt thư viện (nếu cần)
 pip install -r requirements.txt
 
+# Khởi chạy tool
 python downloader.py
 ```
 
----
-
-### 2. Dành cho người dùng macOS
-
-#### Cách 1: Chạy qua Script
-1. Mở ứng dụng **Terminal** trên máy Mac.
-2. Di chuyển vào thư mục dự án và cấp quyền thực thi (chỉ cần làm lần đầu):
-   ```bash
-   chmod +x run_mac.sh
-   ./run_mac.sh
-   ```
-
-#### Cách 2: Chạy trực tiếp với Python 3
+### 2. Dành cho macOS / Linux
 ```bash
-pip3 install -r requirements.txt
+# Di chuyển vào thư mục dự án
+cd easy-yt-downloader
 
-python3 downloader.py
+# Cấp quyền thực thi và chạy
+chmod +x run_mac.command
+./run_mac.command
 ```
 
-> [!TIP]
-> **Khuyên dùng trên macOS:** Bạn nên cài đặt `ffmpeg` thông qua Homebrew để tối ưu hóa hiệu năng ghép video:
-> ```bash
-> brew install ffmpeg
-> ```
-> *(Nếu máy chưa có Homebrew hoặc ffmpeg, công cụ sẽ tự động sử dụng bộ chuyển mã đi kèm qua `imageio-ffmpeg`)*.
+> **Gợi ý trên macOS:** Khuyên dùng `ffmpeg` thông qua Homebrew (`brew install ffmpeg`) để tối ưu hiệu năng ghép video. Nếu máy chưa có Homebrew, tool sẽ tự động sử dụng bộ chuyển mã đi kèm qua `imageio-ffmpeg`.
 
 ---
 
-## 📖 Hướng Dẫn Thao Tác
+## Hướng Dẫn Thao Tác
 
 Khi màn hình công cụ hiện lên:
-1. **Dán link:** Copy link video hoặc playlist từ trình duyệt $\rightarrow$ Chuột phải (hoặc `Ctrl + V` / `Cmd + V`) vào cửa sổ tool $\rightarrow$ Nhấn **Enter**.
+1. **Dán link:** Copy link video hoặc playlist từ trình duyệt -> Chuột phải (hoặc `Ctrl + V` / `Cmd + V`) vào cửa sổ tool -> Nhấn **Enter**.
 2. **Chọn chất lượng:**
-   - Nhập `1`: Tải chuẩn **1080p Full HD (MP4)** *(Mặc định)*.
+   - Nhập `1`: Tải chuẩn **1080p Full HD (MP4)** *(Khuyên dùng)*.
    - Nhập `2`: Tải chuẩn **720p HD (MP4)** *(Dung lượng nhẹ)*.
    - Nhập `3`: Tải chất lượng tối đa (**2K / 4K / 8K**).
    - Nhập `4`: Chỉ lấy file âm thanh **MP3 (320kbps)**.
@@ -101,7 +95,7 @@ Khi màn hình công cụ hiện lên:
 
 ---
 
-##  Câu Hỏi Thường Gặp (FAQ)
+## Câu Hỏi Thường Gặp (FAQ)
 
 <details>
 <summary><b>1. Video 1080p có bị mất tiếng không?</b></summary>
@@ -109,22 +103,21 @@ Hoàn toàn không. Công cụ tự động kích hoạt FFmpeg để ghép lu�
 </details>
 
 <details>
-<summary><b>2. Có tải được video Shorts hoặc video riêng tư không?</b></summary>
-- Video Shorts: Hỗ trợ 100%.
-- Video riêng tư / giới hạn độ tuổi: Cần bổ sung cookies trình duyệt nếu YouTube yêu cầu đăng nhập.
+<summary><b>2. Có tải được video Shorts hoặc từ các nền tảng khác không?</b></summary>
+Có. Ngoài YouTube thông thường và Shorts, công cụ còn hỗ trợ tải video/audio từ Facebook, TikTok, Instagram, SoundCloud, Vimeo, Bilibili...
 </details>
 
 <details>
 <summary><b>3. Làm sao để tải các tập tiếp theo của một playlist mà không bị tải trùng?</b></summary>
-Công cụ đã bật sẵn tính năng chống ghi đè (`nooverwrites=True`). Những video đã tải trong thư mục sẽ tự động được bỏ qua, giúp tiết kiệm thời gian và băng thông.
+Công cụ đã bật sẵn tính năng chống ghi đè (`nooverwrites=True`). Những video đã có trong thư mục sẽ tự động được bỏ qua, giúp tiết kiệm thời gian và băng thông.
 </details>
 
 ---
 
-##  Đóng Góp (Contributing)
+## Đóng Góp (Contributing)
 
 Mọi đóng góp nhằm cải thiện công cụ đều rất được hoan nghênh! Hãy mở một **Issue** hoặc tạo một **Pull Request** trên GitHub.
 
-## 📄 Bản Quyền (License)
+## Bản Quyền (License)
 
 Dự án được phân phối dưới giấy phép [MIT License](LICENSE). Tự do sử dụng, chỉnh sửa và chia sẻ.
