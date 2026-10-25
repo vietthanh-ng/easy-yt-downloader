@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Output directories & media files
+downloads/
+Videos_Da_Tai/
+*.mp4
+*.mkv
+*.webm
+*.mp3
+*.m4a
+*.part
+*.ytdl
+
+# Standalone executables & OS metadata
+*.exe
+ffmpeg
+yt-dlp
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
